@@ -70,6 +70,10 @@ form {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+#login-form {
+    background-color: rgb(228, 231, 202);
+}
+
 label {
     font-weight: bold;
 }
