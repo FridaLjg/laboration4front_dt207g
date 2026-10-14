@@ -9,7 +9,7 @@ if (!token) {
 // Anropa skyddad route
 fetch("http://localhost:3001/api/protected", {
     headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ` + token
     }
 })
     .then(response => response.json())
