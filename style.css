@@ -94,7 +94,6 @@ label {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
-
 }
 
 footer {
@@ -112,4 +111,12 @@ main {
     max-width: 800px;
     margin: 2rem auto;
     line-height: 1.6;
+}
+
+input {
+    width: 250px;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
