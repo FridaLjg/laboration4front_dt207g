@@ -124,3 +124,43 @@ input {
     border-radius: 5px;
     font-size: 1rem;
 }
+
+/*Mediaquery för mindre skärmar*/
+@media (max-width: 600px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-left: 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    form {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .add-button {
+        width: 100%;
+    }
+
+    main {
+        width: 95%;
+        padding: 1rem;
+    }
+
+}
