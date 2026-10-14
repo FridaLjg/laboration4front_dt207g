@@ -26,9 +26,11 @@ form.addEventListener("submit", async (e) => {
         //Kontroll
         if (response.ok) {
             alert("Användare skapad!");
-            form.reset();
+
+            // Skicka användaren till login-sidan
+            window.location.href = "login.html";
         } else {
-            console.log(data.error);
+            alert(data.error);
         }
 
     } catch (error) {
