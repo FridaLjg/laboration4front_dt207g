@@ -1,11 +1,30 @@
 const form = document.getElementById("register-form");
+const errorMessages = document.getElementById("error-messages");
 
 //Eventlyssnare
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    errorMessages.innerHTML = "";
+
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
+
+    // Validering
+    if (!username || !password) {
+
+        if (!username) {
+            errorMessages.innerHTML +=
+                "<li>Användarnamn måste anges.</li>";
+        }
+
+        if (!password) {
+            errorMessages.innerHTML +=
+                "<li>Lösenord måste anges.</li>";
+        }
+
+        return;
+    }
 
     try {
         //Skickar username och password till API
@@ -30,7 +49,8 @@ form.addEventListener("submit", async (e) => {
             // Skicka användaren till login-sidan
             window.location.href = "login.html";
         } else {
-            alert(data.error);
+            errorMessages.innerHTML =
+                `<li>${data.error}</li>`;
         }
 
     } catch (error) {

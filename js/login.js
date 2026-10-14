@@ -1,10 +1,29 @@
 const form = document.getElementById("login-form");
+const errorMessages = document.getElementById("error-messages");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    errorMessages.innerHTML = "";
+
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
+
+    //Validering
+    if (!username || !password) {
+
+        if (!username) {
+            errorMessages.innerHTML +=
+                "<li>Användarnamn måste anges.</li>";
+        }
+
+        if (!password) {
+            errorMessages.innerHTML +=
+                "<li>Lösenord måste anges.</li>";
+        }
+
+        return;
+    }
 
     try {
         const response = await fetch("http://localhost:3001/api/login", {
@@ -29,7 +48,8 @@ form.addEventListener("submit", async (e) => {
             window.location.href = "protected.html";
 
         } else {
-            alert(data.error);
+            errorMessages.innerHTML =
+                `<li>${data.error}</li>`;
         }
 
     } catch (error) {
