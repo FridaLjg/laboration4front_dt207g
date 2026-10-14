@@ -14,8 +14,9 @@ fetch("http://localhost:3001/api/protected", {
 })
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         document.getElementById("protected-message").textContent =
-            data.message;
+            `${data.message}`;
     })
     .catch(error => {
         console.error(error);
